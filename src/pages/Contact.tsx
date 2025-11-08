@@ -6,12 +6,12 @@ const Contact = () => {
     <div className="min-h-screen bg-background text-foreground font-mono p-8 md:p-16">
       <div className="max-w-4xl">
         <h1 className="text-xs uppercase tracking-wider mb-12 text-secondary">
-          <ScrambleText text="GET IN TOUCH" />
+          <ScrambleText text="GET IN TOUCH" delay={100} />
         </h1>
         
         <div className="space-y-8 text-sm md:text-base">
           <p className="text-muted-foreground leading-relaxed">
-            feel free to reach out if you want to collaborate, chat about interesting ideas, or just say hello.
+            <ScrambleText text="feel free to reach out if you want to collaborate, chat about interesting ideas, or just say hello." delay={200} />
           </p>
 
           <div className="flex flex-col gap-4">
@@ -21,14 +21,14 @@ const Contact = () => {
             >
               <Mail size={18} />
               <span className="group-hover:translate-x-1 transition-transform">
-                <ScrambleText text="your.email@example.com" />
+                <ScrambleText text="your.email@example.com" delay={300} />
               </span>
             </a>
           </div>
 
           <div className="pt-8">
             <h2 className="text-xs uppercase tracking-wider mb-6 text-secondary">
-              <ScrambleText text="ELSEWHERE" />
+              <ScrambleText text="ELSEWHERE" delay={400} />
             </h2>
             
             <div className="flex flex-col gap-4">
@@ -40,7 +40,7 @@ const Contact = () => {
               >
                 <Twitter size={18} />
                 <span className="group-hover:translate-x-1 transition-transform">
-                  <ScrambleText text="twitter" />
+                  <ScrambleText text="twitter" delay={500} />
                 </span>
               </a>
 
@@ -52,7 +52,7 @@ const Contact = () => {
               >
                 <Github size={18} />
                 <span className="group-hover:translate-x-1 transition-transform">
-                  <ScrambleText text="github" />
+                  <ScrambleText text="github" delay={600} />
                 </span>
               </a>
 
@@ -64,7 +64,7 @@ const Contact = () => {
               >
                 <Linkedin size={18} />
                 <span className="group-hover:translate-x-1 transition-transform">
-                  <ScrambleText text="linkedin" />
+                  <ScrambleText text="linkedin" delay={700} />
                 </span>
               </a>
             </div>

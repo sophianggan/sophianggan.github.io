@@ -26,7 +26,7 @@ const Writing = () => {
     <div className="min-h-screen bg-background text-foreground font-mono p-8 md:p-16">
       <div className="max-w-4xl">
         <h1 className="text-xs uppercase tracking-wider mb-12 text-secondary">
-          <ScrambleText text="SELECTED WRITING" />
+          <ScrambleText text="SELECTED WRITING" delay={100} />
         </h1>
         
         <div className="space-y-10">
@@ -37,14 +37,14 @@ const Writing = () => {
                   href={writing.link}
                   className="text-lg md:text-xl text-foreground hover:text-accent transition-colors"
                 >
-                  <ScrambleText text={writing.title} />
+                  <ScrambleText text={writing.title} delay={200 + index * 100} />
                 </a>
                 <span className="text-xs text-muted-foreground ml-auto">
-                  {writing.date}
+                  <ScrambleText text={writing.date} delay={250 + index * 100} />
                 </span>
               </div>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                {writing.description}
+                <ScrambleText text={writing.description} delay={300 + index * 100} />
               </p>
             </div>
           ))}

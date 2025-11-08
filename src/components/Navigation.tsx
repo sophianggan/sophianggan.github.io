@@ -2,7 +2,10 @@ import { NavLink } from '@/components/NavLink';
 import { ScrambleText } from './ScrambleText';
 
 const navItems = [
-  { to: '/', label: 'ABOUT' },
+  { to: '/', label: 'HOME' },
+  { to: '/present', label: 'PRESENT' },
+  { to: '/past', label: 'PAST' },
+  { to: '/future', label: 'FUTURE' },
   { to: '/projects', label: 'PROJECTS' },
   { to: '/writing', label: 'WRITING' },
   { to: '/contact', label: 'CONTACT' },
