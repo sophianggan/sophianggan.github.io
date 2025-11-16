@@ -193,7 +193,7 @@ const Timeline = () => {
                   <HoverScrambleText text="sales + data analyst intern" shouldScramble={hoveredSection === 'offers'} />
                 </div>
                 <div className="text-white/70 italic">
-                  Procter & Gamble
+                  procter & gamble (p&g)
                 </div>
               </div>
             </div>
