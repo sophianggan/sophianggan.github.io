@@ -48,4 +48,23 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  
+  a, button {
+    cursor: pointer;
+  }
+}
+
+/* Muted theme for accessibility */
+.muted-theme h1[style*="#7FFFD4"],
+.muted-theme h2[style*="#7FFFD4"],
+.muted-theme span[style*="#7FFFD4"] {
+  color: #4A5568 !important;
+}
+
+.muted-theme div[style*="#AFEEEE"] {
+  color: #718096 !important;
+}
+
+.muted-theme .text-white {
+  color: #CBD5E0 !important;
 }

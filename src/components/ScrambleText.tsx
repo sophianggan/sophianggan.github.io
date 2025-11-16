@@ -4,12 +4,13 @@ interface ScrambleTextProps {
   text: string;
   className?: string;
   delay?: number;
+  speed?: number;
 }
 
 const chars = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
 
-export const ScrambleText = ({ text, className = '', delay = 0 }: ScrambleTextProps) => {
-  const [displayText, setDisplayText] = useState('');
+export const ScrambleText = ({ text, className = '', delay = 0, speed = 15 }: ScrambleTextProps) => {
+  const [displayText, setDisplayText] = useState(text);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -32,14 +33,14 @@ export const ScrambleText = ({ text, className = '', delay = 0 }: ScrambleTextPr
           clearInterval(interval);
         }
 
-        iteration += 1 / 3;
-      }, 30);
+        iteration += 1 / 2;
+      }, speed);
 
       return () => clearInterval(interval);
     }, delay);
 
     return () => clearTimeout(timeout);
-  }, [text, delay]);
+  }, [text, delay, speed]);
 
   return (
     <span className={`inline-block ${className}`}>
