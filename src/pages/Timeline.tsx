@@ -200,20 +200,7 @@ const Timeline = () => {
             </h2>
             
             <div className="space-y-8 text-xs text-white leading-relaxed">
-              <div>
-                <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-white mr-2"><ScrambleText text="01" delay={400} /></span>
-                  <span className="ml-auto text-white/70">may 2026 - aug 2026</span>
-                </div>
-                <div className="font-semibold mb-1">
-                  <HoverScrambleText text="sales + data analyst intern" shouldScramble={hoveredSection === 'upcoming'} />
-                </div>
-                <div className="text-white/70 italic">
-                  procter & gamble (p&g)
-                </div>
-              </div>
-              
-              <div className="mt-8 text-white/50 italic">
+              <div className="text-white/50 italic">
                 ... in-progress
               </div>
             </div>
