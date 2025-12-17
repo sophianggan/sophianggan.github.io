@@ -26,7 +26,7 @@ const Timeline = () => {
           </div>
           <div className="flex justify-center items-center gap-2">
             <div className="flex-1 h-0.5 bg-white"></div>
-            <div className={`border-2 border-white rounded-full transition-all ${hoveredSection === 'offers' ? 'bg-white w-4 h-4' : 'bg-transparent w-3 h-3'}`}></div>
+            <div className={`border-2 border-white rounded-full transition-all ${hoveredSection === 'upcoming' ? 'bg-white w-4 h-4' : 'bg-transparent w-3 h-3'}`}></div>
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -188,14 +188,14 @@ const Timeline = () => {
             </div>
           </section>
 
-          {/* OFFERS Column */}
+          {/* UPCOMING Column */}
           <section 
-            onMouseEnter={() => setHoveredSection('offers')}
+            onMouseEnter={() => setHoveredSection('upcoming')}
             onMouseLeave={() => setHoveredSection(null)}
           >
             <h2 className="text-xs uppercase tracking-wider mb-8 font-bold">
               <span style={{ color: '#7FFFD4' }}>
-                <ScrambleText text="OFFERS" delay={350} />
+                <ScrambleText text="UPCOMING" delay={350} />
               </span>
             </h2>
             
@@ -206,11 +206,15 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">may 2026 - aug 2026</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="sales + data analyst intern" shouldScramble={hoveredSection === 'offers'} />
+                  <HoverScrambleText text="sales + data analyst intern" shouldScramble={hoveredSection === 'upcoming'} />
                 </div>
                 <div className="text-white/70 italic">
                   procter & gamble (p&g)
                 </div>
+              </div>
+              
+              <div className="mt-8 text-white/50 italic">
+                ... in-progress
               </div>
             </div>
           </section>
