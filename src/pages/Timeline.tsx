@@ -95,6 +95,22 @@ const Timeline = () => {
               <div>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="text-white mr-2"><ScrambleText text="01" delay={500} /></span>
+                  <span className="ml-auto text-white/70">dec 2025</span>
+                </div>
+                <div className="font-semibold mb-1">
+                  <HoverScrambleText text="ecogrid - carbon-aware gpu scheduler" shouldScramble={hoveredSection === 'projects'} />
+                </div>
+                <div className="italic mb-2" style={{ color: '#AFEEEE' }}>
+                  fastapi, rapids (cudf), docker
+                </div>
+                <div>
+                  developed middleware optimizing gpu scheduling via real-time carbon intensity to mitigate operational volatility. engineered a fastapi microservice leveraging rapids (cudf) for gpu-accelerated analysis of optimal training windows. containerized using docker for cloud-agnostic portability across distributed clusters, meeting ai scalability standards. enhanced efficiency by automating energy-aware workload timing, bridging hpc requirements with sustainability.
+                </div>
+              </div>
+              
+              <div>
+                <div className="flex items-baseline justify-between mb-1">
+                  <span className="text-white mr-2"><ScrambleText text="02" delay={600} /></span>
                   <span className="ml-auto text-white/70">oct 2025</span>
                 </div>
                 <div className="font-semibold mb-1">
@@ -110,7 +126,7 @@ const Timeline = () => {
               
               <div>
                 <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-white mr-2"><ScrambleText text="02" delay={600} /></span>
+                  <span className="text-white mr-2"><ScrambleText text="03" delay={700} /></span>
                   <span className="ml-auto text-white/70">july 2025</span>
                 </div>
                 <div className="font-semibold mb-1">
@@ -126,7 +142,7 @@ const Timeline = () => {
               
               <div>
                 <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-white mr-2"><ScrambleText text="03" delay={700} /></span>
+                  <span className="text-white mr-2"><ScrambleText text="04" delay={800} /></span>
                   <span className="ml-auto text-white/70">feb 2025</span>
                 </div>
                 <div className="font-semibold mb-1">

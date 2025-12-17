@@ -2,25 +2,32 @@ import { ScrambleText } from '@/components/ScrambleText';
 
 const projects = [
   {
-    title: 'AlphaXplore',
-    tech: 'Python, Streamlit, Click, SQLAlchemy, scikit-learn, Docker, CI/CD',
-    description: 'Designed registry-driven FastAPI & SQLAlchemy backend merging market, macro, and alt datasets for factor analyses. Built composable FeatureBuilder & ModelManager modules running scikit-learn models with artifact tracking logs. Built modular backtesting engine computing CAGR, Sharpe, & drawdowns; deployed via Docker with CI/CD builds.',
+    title: 'ecogrid - carbon-aware gpu scheduler',
+    tech: 'fastapi, rapids (cudf), docker',
+    description: 'developed middleware optimizing gpu scheduling via real-time carbon intensity to mitigate operational volatility. engineered a fastapi microservice leveraging rapids (cudf) for gpu-accelerated analysis of optimal training windows. containerized using docker for cloud-agnostic portability across distributed clusters, meeting ai scalability standards. enhanced efficiency by automating energy-aware workload timing, bridging hpc requirements with sustainability.',
     link: '#',
-    year: 'Oct 2025',
+    year: 'dec 2025',
   },
   {
-    title: 'Stock NewsGraph',
-    tech: 'Python, Streamlit, spaCy, PyVis, FastAPI, Docker, NetworkX',
-    description: 'Built interactive Streamlit + PyVis interface generating multi-hop company graphs from Google News RSS feeds. Applied spaCy NER & NetworkX/PageRank to extract, rank co-mentioned firms; map names via canonical utility. Deployed FastAPI + Streamlit services inside Docker container with .env keys & lightweight REST endpoints.',
+    title: 'alphaxplore',
+    tech: 'python, streamlit, click, sqlalchemy, scikit-learn, docker, ci/cd',
+    description: 'designed registry-driven fastapi & sqlalchemy backend merging market, macro, and alt datasets for factor analyses. built composable featurebuilder & modelmanager modules running scikit-learn models with artifact tracking logs. built modular backtesting engine computing cagr, sharpe, & drawdowns; deployed via docker with ci/cd builds.',
     link: '#',
-    year: 'July 2025',
+    year: 'oct 2025',
   },
   {
-    title: 'RAG-TA Assistant',
-    tech: 'LangChain, Groq LLaMA 3.3 8B, Pinecone, Python ETL, Prompt Tuning',
-    description: 'Designed a cost-efficient RAG system combining Groq-accelerated LLM inference with Pinecone vector retrieval. Automated daily ETL to clean, classify, and embed 50K+ academic data points with structured metadata. Implemented prompt-tuned ranking and telemetry to monitor retrieval precision, latency, and model drift.',
+    title: 'stock newsgraph',
+    tech: 'python, streamlit, spacy, pyvis, fastapi, docker, networkx',
+    description: 'built interactive streamlit + pyvis interface generating multi-hop company graphs from google news rss feeds. applied spacy ner & networkx/pagerank to extract, rank co-mentioned firms; map names via canonical utility. deployed fastapi + streamlit services inside docker container with .env keys & lightweight rest endpoints.',
     link: '#',
-    year: 'Feb 2025',
+    year: 'july 2025',
+  },
+  {
+    title: 'rag-ta assistant',
+    tech: 'langchain, groq llama 3.3 8b, pinecone, python etl, prompt tuning',
+    description: 'designed a cost-efficient rag system combining groq-accelerated llm inference with pinecone vector retrieval. automated daily etl to clean, classify, and embed 50k+ academic data points with structured metadata. implemented prompt-tuned ranking and telemetry to monitor retrieval precision, latency, and model drift.',
+    link: '#',
+    year: 'feb 2025',
   },
 ];
 
