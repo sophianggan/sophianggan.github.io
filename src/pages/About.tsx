@@ -53,10 +53,10 @@ const About = () => {
   }, [onPointerMove, onPointerUp]);
 
   return (
-    <div className="min-h-screen bg-background text-white font-mono flex items-center p-8 md:p-16 relative">
-      <div className="max-w-6xl mx-auto w-full">
+    <div className="min-h-screen bg-background text-white font-mono flex items-center justify-center p-8 md:p-16 relative">
+      <div>
         {/* Single horizontal line: "hey → i'm sophie ng and this is my [scrollable]" */}
-        <div className="flex items-baseline flex-wrap gap-x-3">
+        <div className="flex items-baseline flex-wrap gap-x-3 justify-center">
           <h1
             className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight whitespace-nowrap"
             style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
