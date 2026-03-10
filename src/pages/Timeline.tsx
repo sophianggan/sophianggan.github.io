@@ -6,10 +6,10 @@ const Timeline = () => {
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-background text-white font-mono p-8 pt-32 md:p-16 md:pt-24">
+    <div className="min-h-screen bg-background text-white font-mono p-8 md:p-16">
       <div className="max-w-6xl mx-auto">
         {/* Timeline Visual */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-12 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-12 mb-8">
           <div className="flex justify-center items-center gap-2">
             <div className={`border-2 border-white rounded-full transition-all ${hoveredSection === 'past' ? 'bg-white w-4 h-4' : 'bg-transparent w-3 h-3'}`}></div>
             <div className="flex-1 h-0.5 bg-white"></div>
@@ -26,7 +26,7 @@ const Timeline = () => {
           </div>
           <div className="flex justify-center items-center gap-2">
             <div className="flex-1 h-0.5 bg-white"></div>
-            <div className={`border-2 border-white rounded-full transition-all ${hoveredSection === 'offers' ? 'bg-white w-4 h-4' : 'bg-transparent w-3 h-3'}`}></div>
+            <div className={`border-2 border-white rounded-full transition-all ${hoveredSection === 'skills' ? 'bg-white w-4 h-4' : 'bg-transparent w-3 h-3'}`}></div>
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -40,7 +40,7 @@ const Timeline = () => {
             onMouseLeave={() => setHoveredSection(null)}
           >
             <h2 className="text-xs uppercase tracking-wider mb-8 font-bold">
-              <span style={{ color: '#7FFFD4' }}>
+              <span style={{ color: 'var(--accent-mint)' }}>
                 <ScrambleText text="PREVIOUSLY" delay={200} />
               </span>
             </h2>
@@ -52,13 +52,13 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">jun 2022 - feb 2023</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="client relations & operations coordinator" shouldScramble={hoveredSection === 'past'} />
+                  <HoverScrambleText text="workflow optimization coordinator" shouldScramble={hoveredSection === 'past'} />
                 </div>
                 <div className="text-white/70 italic mb-2">
                   restaurant buffet mandarin & hotel el doral
                 </div>
                 <div>
-                  built forecasting models in excel/python using seasonality to sustain &gt;80% occupancy and optimize staffing. designed time-series kpis (revpash, adr, occupancy) in power bi and ran variance analysis on $4m transactions. automated reconciliation via sql/vba pipelines and detected outliers using iqr thresholds and control charts.
+                  forecasted daily demand to keep occupancy &gt;80% and reconciled $4m annual transactions with zero variances. redesigned check-in and seating workflows to cut wait times 25% while sustaining 94% guest satisfaction. managed 30+ daily requests, increased upsell rate by 15%, and eliminated no-show write-offs for 6 months. built weekly kpi dashboards (occupancy, revpash) and trained new staff, reducing overtime costs 12%.
                 </div>
               </div>
               
@@ -68,26 +68,26 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">jun 2021 - jul 2024</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="assistant coach, team captain, national swimmer" shouldScramble={hoveredSection === 'past'} />
+                  <HoverScrambleText text="peruvian team captain & assistant coach" shouldScramble={hoveredSection === 'past'} />
                 </div>
                 <div className="text-white/70 italic mb-2">
                   peruvian national swimming team
                 </div>
                 <div>
-                  built regression models on split-time data to optimize taper cycles and improve performance yield. directed 80+ athletes to a south american title and top-5 finishes at world juniors and international meets. developed z-score models to forecast variance shifts and prevent performance degradation or injury across 100+ records.
+                  captained and mentored 80+ athletes to a south american athletic conference title and 100+ record-breaking finishes. competed at the junior world championships, contributing to a 7th place relay and multiple top 5 finishes. contributed to peru's 3rd place at copa pacifico and set lasting national records.
                 </div>
               </div>
             </div>
           </section>
 
-          {/* PROJECTS Column */}
+          {/* RECENTLY WORKED ON Column */}
           <section 
             onMouseEnter={() => setHoveredSection('projects')}
             onMouseLeave={() => setHoveredSection(null)}
           >
             <h2 className="text-xs uppercase tracking-wider mb-8 font-bold">
-              <span style={{ color: '#7FFFD4' }}>
-                <ScrambleText text="PROJECTS" delay={250} />
+              <span style={{ color: 'var(--accent-mint)' }}>
+                <ScrambleText text="RECENTLY WORKED ON..." delay={250} />
               </span>
             </h2>
             
@@ -95,48 +95,64 @@ const Timeline = () => {
               <div>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="text-white mr-2"><ScrambleText text="01" delay={500} /></span>
-                  <span className="ml-auto text-white/70">oct 2025</span>
+                  <span className="ml-auto text-white/70">feb 2026</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="alphaxplore" shouldScramble={hoveredSection === 'projects'} />
+                  <HoverScrambleText text="olympic medal predictor" shouldScramble={hoveredSection === 'projects'} />
                 </div>
-                <div className="italic mb-2" style={{ color: '#AFEEEE' }}>
-                  python, streamlit, click, sqlalchemy, scikit-learn, docker, ci/cd
+                <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
+                  neo4j, pytorch geometric, hetero-gnn (graphsage + gatv2), sbert, langgraph
                 </div>
                 <div>
-                  designed registry-driven fastapi & sqlalchemy backend merging market, macro, and alt datasets for factor analyses. built composable featurebuilder & modelmanager modules running scikit-learn models with artifact tracking logs. built modular backtesting engine computing cagr, sharpe, & drawdowns; deployed via docker with ci/cd builds.
+                  built a leakage-safe olympic medal ranking system using time-sliced neo4j snapshots; trained a hetero-gnn model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end ci/cd pipeline.
                 </div>
               </div>
               
               <div>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="text-white mr-2"><ScrambleText text="02" delay={600} /></span>
-                  <span className="ml-auto text-white/70">july 2025</span>
+                  <span className="ml-auto text-white/70">jan 2026</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="stock newsgraph" shouldScramble={hoveredSection === 'projects'} />
+                  <HoverScrambleText text="wordle & connections solver" shouldScramble={hoveredSection === 'projects'} />
                 </div>
-                <div className="italic mb-2" style={{ color: '#AFEEEE' }}>
-                  python, streamlit, spacy, pyvis, fastapi, docker, networkx
+                <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
+                  c++, simd (highway), cmake, webassembly (emscripten), pca, ci
                 </div>
                 <div>
-                  built interactive streamlit + pyvis interface generating multi-hop company graphs from google news rss feeds. applied spacy ner & networkx/pagerank to extract, rank co-mentioned firms; map names via canonical utility. deployed fastapi + streamlit services inside docker container with .env keys & lightweight rest endpoints.
+                  built a high-performance wordle + connections solver using shannon-entropy search and pca clustering; accelerated scoring with simd (highway) and fixed-block memory pooling, shipped a webassembly demo, and added ci with sanitizer-backed tests, proofs, and detailed benchmarks.
                 </div>
               </div>
               
               <div>
                 <div className="flex items-baseline justify-between mb-1">
                   <span className="text-white mr-2"><ScrambleText text="03" delay={700} /></span>
-                  <span className="ml-auto text-white/70">feb 2025</span>
+                  <span className="ml-auto text-white/70">nov 2025</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="rag-ta assistant" shouldScramble={hoveredSection === 'projects'} />
+                  <HoverScrambleText text="news-driven stock analysis" shouldScramble={hoveredSection === 'projects'} />
                 </div>
-                <div className="italic mb-2" style={{ color: '#AFEEEE' }}>
-                  langchain, groq llama 3.3 8b, pinecone, python etl, prompt tuning
+                <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
+                  fastapi, streamlit, postgres, spacy, pyvis, scikit-learn, pyspark, docker, ci
                 </div>
                 <div>
-                  designed a cost-efficient rag system combining groq-accelerated llm inference with pinecone vector retrieval. automated daily etl to clean, classify, and embed 50k+ academic data points with structured metadata. implemented prompt-tuned ranking and telemetry to monitor retrieval precision, latency, and model drift.
+                  built a news-to-graph analytics pipeline: extracted company entities from google news, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (streamlit/pyvis) + json apis (fastapi); computed influence (pagerank) and weekly sector metrics from postgres-backed headlines.
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-baseline justify-between mb-1">
+                  <span className="text-white mr-2"><ScrambleText text="04" delay={800} /></span>
+                  <span className="ml-auto text-white/70">oct 2025</span>
+                </div>
+                <div className="font-semibold mb-1">
+                  <HoverScrambleText text="multimodal rag study assistant (virtual ta)" shouldScramble={hoveredSection === 'projects'} />
+                </div>
+                <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
+                  python, langchain, pinecone, groq batching, ocr, etl
+                </div>
+                <div>
+                  built a multimodal study assistant: indexed pdf chunks in pinecone for semantic retrieval, automated batched groq-based ocr with cleaning, chunking, and embedding with a 72-hour refresh etl, and served grounded q&a via langchain and groq with microsoft claimification guardrails.
                 </div>
               </div>
             </div>
@@ -148,7 +164,7 @@ const Timeline = () => {
             onMouseLeave={() => setHoveredSection(null)}
           >
             <h2 className="text-xs uppercase tracking-wider mb-8 font-bold">
-              <span style={{ color: '#7FFFD4' }}>
+              <span style={{ color: 'var(--accent-mint)' }}>
                 <ScrambleText text="CURRENTLY" delay={100} />
               </span>
             </h2>
@@ -160,40 +176,72 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">sept 2024 - present</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="technology, risk & client-support analyst" shouldScramble={hoveredSection === 'currently'} />
+                  <HoverScrambleText text="associate it operations advisor & data analyst" shouldScramble={hoveredSection === 'currently'} />
                 </div>
                 <div className="text-white/70 italic mb-2">
                   scotiabank it help desk, university of toronto information commons
                 </div>
                 <div>
-                  analyzed 5k+ entra id accounts using azure graph scripts to verify mfa and assess access risk with 0% exceptions. built python/sql ticket analytics from servicenow data; used regression and clustering to cut median ttr by 45%. created sla dashboards for fcr, p1 latency, and backlog trends; a/b-tested kb updates to reach 97% fcr.
+                  automated identity lifecycle workflows for 5k+ azure accounts using python apis, cut processing time by 80%. queried ticket data with sql and built power bi dashboards to track sla risk and trends across 50+ daily cases. designed rule-based triage automation in servicenow, reducing mean-tor by 45% through ai routing. built log-ingestion pipeline centralizing m365/azure audit data for analytics, anomaly tracing, & compliance.
                 </div>
               </div>
             </div>
           </section>
 
-          {/* OFFERS Column */}
+          {/* SKILLS Column */}
           <section 
-            onMouseEnter={() => setHoveredSection('offers')}
+            onMouseEnter={() => setHoveredSection('skills')}
             onMouseLeave={() => setHoveredSection(null)}
           >
             <h2 className="text-xs uppercase tracking-wider mb-8 font-bold">
-              <span style={{ color: '#7FFFD4' }}>
-                <ScrambleText text="OFFERS" delay={350} />
+              <span style={{ color: 'var(--accent-mint)' }}>
+                <ScrambleText text="SKILLS" delay={350} />
               </span>
             </h2>
             
-            <div className="space-y-8 text-xs text-white leading-relaxed">
+            <div className="space-y-6 text-xs text-white leading-relaxed">
               <div>
-                <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-white mr-2"><ScrambleText text="01" delay={400} /></span>
-                  <span className="ml-auto text-white/70">may 2026 - aug 2026</span>
+                <div className="font-semibold mb-2">
+                  <HoverScrambleText text="programming" shouldScramble={hoveredSection === 'skills'} />
                 </div>
-                <div className="font-semibold mb-1">
-                  <HoverScrambleText text="sales + data analyst intern" shouldScramble={hoveredSection === 'offers'} />
+                <div className="text-white/70">
+                  python, sql, c++
                 </div>
-                <div className="text-white/70 italic">
-                  procter & gamble (p&g)
+              </div>
+
+              <div>
+                <div className="font-semibold mb-2">
+                  <HoverScrambleText text="frameworks & libraries" shouldScramble={hoveredSection === 'skills'} />
+                </div>
+                <div className="text-white/70">
+                  pandas, pytorch, numpy, scikit-learn, statsmodels, xgboost, lightgbm, catboost, spacy, langchain, langgraph, rag, recursive language models (rlms)
+                </div>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-2">
+                  <HoverScrambleText text="data & infra" shouldScramble={hoveredSection === 'skills'} />
+                </div>
+                <div className="text-white/70">
+                  pyspark, airflow, sqlalchemy, etl, batch processing, data warehousing, fastapi, fastmcp, rest, docker, ci/cd, git
+                </div>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-2">
+                  <HoverScrambleText text="databases" shouldScramble={hoveredSection === 'skills'} />
+                </div>
+                <div className="text-white/70">
+                  postgresql, neo4j, pinecone
+                </div>
+              </div>
+
+              <div>
+                <div className="font-semibold mb-2">
+                  <HoverScrambleText text="financial & analytics" shouldScramble={hoveredSection === 'skills'} />
+                </div>
+                <div className="text-white/70">
+                  advanced excel (pivottables, xlookup, power query), tableau, power bi, variance analysis, forecasting
                 </div>
               </div>
             </div>

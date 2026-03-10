@@ -1,66 +1,119 @@
 import { ScrambleText } from '@/components/ScrambleText';
+import { HoverScrambleText } from '@/components/HoverScrambleText';
+import { useState } from 'react';
 
-const projects = [
+const columns = [
   {
-    title: 'AlphaXplore',
-    tech: 'Python, Streamlit, Click, SQLAlchemy, scikit-learn, Docker, CI/CD',
-    description: 'Designed registry-driven FastAPI & SQLAlchemy backend merging market, macro, and alt datasets for factor analyses. Built composable FeatureBuilder & ModelManager modules running scikit-learn models with artifact tracking logs. Built modular backtesting engine computing CAGR, Sharpe, & drawdowns; deployed via Docker with CI/CD builds.',
-    link: '#',
-    year: 'Oct 2025',
+    label: 'ML & OPTIMIZATION',
+    projects: [
+      {
+        title: 'olympic medal predictor',
+        tech: 'neo4j, pytorch geometric, hetero-gnn (graphsage + gatv2), sbert, langgraph',
+        description: 'built a leakage-safe olympic medal ranking system using time-sliced neo4j snapshots; trained a hetero-gnn model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end ci/cd pipeline.',
+        link: 'https://github.com/sophianggan/olympus-graph',
+      },
+      {
+        title: 'wordle & connections solver',
+        tech: 'c++, simd (highway), cmake, webassembly (emscripten), pca, ci',
+        description: 'built a high-performance wordle + connections solver using shannon-entropy search and pca clustering; accelerated scoring with simd (highway) and fixed-block memory pooling, shipped a webassembly demo, and added ci with sanitizer-backed tests, proofs, and detailed benchmarks.',
+        link: 'https://sophianggan.github.io/nyt-solver/',
+      },
+    ],
   },
   {
-    title: 'Stock NewsGraph',
-    tech: 'Python, Streamlit, spaCy, PyVis, FastAPI, Docker, NetworkX',
-    description: 'Built interactive Streamlit + PyVis interface generating multi-hop company graphs from Google News RSS feeds. Applied spaCy NER & NetworkX/PageRank to extract, rank co-mentioned firms; map names via canonical utility. Deployed FastAPI + Streamlit services inside Docker container with .env keys & lightweight REST endpoints.',
-    link: '#',
-    year: 'July 2025',
+    label: 'DATA & NLP',
+    projects: [
+      {
+        title: 'news-driven stock analysis',
+        tech: 'fastapi, streamlit, postgres, spacy, pyvis, scikit-learn, pyspark, docker, ci',
+        description: 'built a news-to-graph analytics pipeline: extracted company entities from google news, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (streamlit/pyvis) + json apis (fastapi); computed influence (pagerank) and weekly sector metrics from postgres-backed headlines.',
+        link: 'https://github.com/sophianggan/pulseforge',
+      },
+      {
+        title: 'multimodal rag study assistant (virtual ta)',
+        tech: 'python, langchain, pinecone, groq batching, ocr, etl',
+        description: 'built a multimodal study assistant: indexed pdf chunks in pinecone for semantic retrieval, automated batched groq-based ocr with cleaning, chunking, and embedding with a 72-hour refresh etl, and served grounded q&a via langchain and groq with microsoft claimification guardrails.',
+        link: '#',
+      },
+    ],
   },
   {
-    title: 'RAG-TA Assistant',
-    tech: 'LangChain, Groq LLaMA 3.3 8B, Pinecone, Python ETL, Prompt Tuning',
-    description: 'Designed a cost-efficient RAG system combining Groq-accelerated LLM inference with Pinecone vector retrieval. Automated daily ETL to clean, classify, and embed 50K+ academic data points with structured metadata. Implemented prompt-tuned ranking and telemetry to monitor retrieval precision, latency, and model drift.',
-    link: '#',
-    year: 'Feb 2025',
+    label: 'FINANCE & ANALYTICS',
+    projects: [
+      {
+        title: 'fp&a reporting automation',
+        tech: 'excel (power query, pivottables, solver), postgresql, tableau, python',
+        description: 'expedited close reporting speed, as measured by automated refreshes and actual vs plan vs prior variance outputs, by building a monthly sql data model and executive-summary pipeline.',
+        link: 'https://github.com/sophianggan/fpa-reporting-automation',
+      },
+      {
+        title: 'subscription revenue forecasting dashboard',
+        tech: 'excel, sql, tableau, power bi',
+        description: 'clarified planning visibility, as measured by segment-level retention and revenue forecasts, by modeling churn, arpu, and mrr using sql aggregations and excel sensitivity analysis.',
+        link: 'https://github.com/sophianggan/Subscription-Revenue-Forecasting-Dashboard',
+      },
+    ],
   },
 ];
 
 const Projects = () => {
+  const [hoveredCol, setHoveredCol] = useState<number | null>(null);
+
   return (
-    <div className="min-h-screen bg-background text-white font-mono p-8 pt-32 md:p-16 md:pt-24">
-      <div className="max-w-4xl">
-        <h1 className="text-xs uppercase tracking-wider mb-12 text-white">
-          <ScrambleText text="SELECTED PROJECTS" delay={100} />
-        </h1>
-        
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <div key={index} className="group">
-              <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white text-xs">
-                  <ScrambleText text={String(index + 1).padStart(2, '0')} delay={200 + index * 100} />
-                </span>
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-4">
-                    <a
-                      href={project.link}
-                      className="text-sm md:text-base text-white hover:text-white transition-colors font-semibold"
-                    >
-                      <ScrambleText text={project.title} delay={250 + index * 100} />
-                    </a>
-                    <span className="text-xs text-white ml-auto">
-                      {project.year}
+    <div className="min-h-screen bg-background text-white font-mono p-8 md:p-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12">
+          {/* Centered title spanning all columns */}
+          <div className="md:col-span-3 flex justify-center mb-8">
+            <h1 className="text-xs uppercase tracking-wider font-bold">
+              <span style={{ color: 'var(--accent-mint)' }}>
+                <ScrambleText text="SELECTED PROJECTS" delay={100} />
+              </span>
+            </h1>
+          </div>
+
+          {/* Row by row: project 0 from each column, then project 1 */}
+          {[0, 1].map((rowIdx) =>
+            columns.map((col, colIdx) => {
+              const project = col.projects[rowIdx];
+              const globalIdx = colIdx * 2 + rowIdx;
+              return (
+                <div
+                  key={`${colIdx}-${rowIdx}`}
+                  className={`text-xs text-white leading-relaxed ${rowIdx === 0 ? 'mb-8' : ''}`}
+                  onMouseEnter={() => setHoveredCol(colIdx)}
+                  onMouseLeave={() => setHoveredCol(null)}
+                >
+                  <div className="flex items-baseline justify-between mb-1">
+                    <span className="text-white mr-2">
+                      <ScrambleText text={String(globalIdx + 1).padStart(2, '0')} delay={200 + globalIdx * 100} />
                     </span>
                   </div>
-                  <div className="text-xs text-white/70 italic mt-1">
+                  <div className="font-semibold mb-1">
+                    {project.link !== '#' ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-white/50 underline-offset-2 hover:decoration-white transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <HoverScrambleText text={project.title} shouldScramble={hoveredCol === colIdx} />
+                        <span className="text-[10px] inline-block translate-y-[-1px]">↗</span>
+                      </a>
+                    ) : (
+                      <HoverScrambleText text={project.title} shouldScramble={hoveredCol === colIdx} />
+                    )}
+                  </div>
+                  <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
                     {project.tech}
                   </div>
+                  <div>
+                    {project.description}
+                  </div>
                 </div>
-              </div>
-              <p className="text-xs md:text-sm text-white leading-relaxed ml-12">
-                {project.description}
-              </p>
-            </div>
-          ))}
+              );
+            })
+          )}
         </div>
       </div>
     </div>

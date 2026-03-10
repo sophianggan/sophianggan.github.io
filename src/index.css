@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system — all colors HSL */
 
 @layer base {
   :root {
@@ -37,6 +35,14 @@ All colors MUST be HSL.
     --ring: 150 30% 75%;
 
     --radius: 0.3rem;
+
+    /* Theme-aware accent colours */
+    --accent-mint: #7FFFD4;
+    --accent-teal: #AFEEEE;
+    --accent-mint-rgb: 127, 255, 212;
+    --text-main: #c8ccd0;
+    --text-faded: rgba(200, 204, 208, 0.45);
+    --track-bg: rgba(255,255,255,0.08);
   }
 }
 
@@ -48,23 +54,111 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-  
+
   a, button {
     cursor: pointer;
   }
 }
 
-/* Muted theme for accessibility */
-.muted-theme h1[style*="#7FFFD4"],
-.muted-theme h2[style*="#7FFFD4"],
-.muted-theme span[style*="#7FFFD4"] {
-  color: #4A5568 !important;
+/* ── Dark-mode softening ── */
+.text-white {
+  color: #c8ccd0;
+}
+.text-white\/70 {
+  color: rgba(200, 204, 208, 0.75);
+}
+.text-white\/50 {
+  color: rgba(200, 204, 208, 0.5);
+}
+.text-white\/80 {
+  color: rgba(200, 204, 208, 0.85);
+}
+.text-white\/40 {
+  color: rgba(200, 204, 208, 0.4);
 }
 
-.muted-theme div[style*="#AFEEEE"] {
-  color: #718096 !important;
+/* ── Light theme variables ── */
+.light-theme {
+  --background: 40 20% 95%;
+  --foreground: 220 15% 20%;
+  --accent-mint: #0d9373;
+  --accent-teal: #0e7c86;
+  --accent-mint-rgb: 13, 147, 115;
+  --text-main: hsl(220 15% 20%);
+  --text-faded: hsla(220, 15%, 20%, 0.4);
+  --track-bg: rgba(0,0,0,0.08);
 }
 
-.muted-theme .text-white {
-  color: #CBD5E0 !important;
+/* Light-mode class overrides */
+.light-theme .bg-background {
+  background-color: hsl(40 20% 95%);
+}
+
+.light-theme .text-white {
+  color: hsl(220 15% 20%);
+}
+.light-theme .text-white\/70 {
+  color: hsla(220, 15%, 20%, 0.65);
+}
+.light-theme .text-white\/50 {
+  color: hsla(220, 15%, 20%, 0.45);
+}
+.light-theme .text-white\/80 {
+  color: hsla(220, 15%, 20%, 0.8);
+}
+.light-theme .text-white\/40 {
+  color: hsla(220, 15%, 20%, 0.35);
+}
+
+/* Light mode links & interactions */
+.light-theme a.underline {
+  text-decoration-color: hsla(220, 15%, 20%, 0.3);
+}
+.light-theme a.underline:hover {
+  text-decoration-color: hsla(220, 15%, 20%, 0.7);
+}
+
+/* Timeline dots & lines */
+.light-theme .border-white {
+  border-color: hsl(220 15% 25%);
+}
+.light-theme .bg-white {
+  background-color: hsl(220 15% 25%);
+}
+.light-theme .h-0\.5.bg-white {
+  background-color: hsl(220 15% 80%);
+}
+
+/* Scroll lever track */
+.light-theme div[style*="rgba(255,255,255,0.08)"] {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Lever pill stays mint */
+.light-theme div[style*="background: rgb(127, 255, 212)"],
+.light-theme div[style*="#7FFFD4"] {
+  background: #0d9373 !important;
+}
+
+/* Typing cursor */
+.light-theme .typing-cursor {
+  border-right-color: #0d9373 !important;
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Typing cursor blink */
+.typing-cursor {
+  border-right: 2px solid #7FFFD4;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
 }

@@ -1,114 +1,98 @@
 import { ScrambleText } from '@/components/ScrambleText';
-import { Link } from 'react-router-dom';
+import { HoverScrambleText } from '@/components/HoverScrambleText';
+import { useState } from 'react';
 
 const lists = {
   films: [
-    'edge of tomorrow',
-    'interstellar',
-    'gone girl',
-    'john wick',
-    'good will hunting',
-    'iron man',
-    'inception',
+    'Edge of Tomorrow',
+    'Interstellar',
+    'Gone Girl',
+    'John Wick',
+    'Good Will Hunting',
+    'Iron Man',
+    'Inception',
   ],
   books: [
-    'crime and punishment (fyodor dostoevsky)',
-    'the paper menagerie and other stories (ken liu)',
-    'the picture of dorian gray (oscar wilde)',
-    'the percy jackson series (rick riordan)',
-    'la familia de pascual duarte (camilo josé cela)',
-    'don quijote (miguel de cervantes)',
-    'the three-body problem (cixin liu)',
-    'anna karenina (leo tolstoy)',
-    'a doll\'s house (henrik ibsen)',
+    'Crime and Punishment (Fyodor Dostoevsky)',
+    'The Paper Menagerie and Other Stories (Ken Liu)',
+    'The Picture of Dorian Gray (Oscar Wilde)',
+    'The Percy Jackson series (Rick Riordan)',
+    'La Familia de Pascual Duarte (Camilo José Cela)',
+    'Don Quijote (Miguel de Cervantes)',
+    'The Three-Body Problem (Cixin Liu)',
+    'Anna Karenina (Leo Tolstoy)',
+    'A Doll\'s House (Henrik Ibsen)',
   ],
   placesAround: [
-    'robarts library study sessions',
-    'late nights at sidney smith hall',
-    'caffeine runs at the caf in bahen',
-    'grabbing bubble tea at chatime, near campus',
-    'chilling in king\'s college circle',
-    'lunch at sammy\'s student exchange',
-    'people-watching in convocation hall',
-    'hiding from responsibility at gerstein library',
+    'Robarts Library study sessions',
+    'Late nights at Sidney Smith Hall',
+    'Caffeine runs at the Caf in Bahen',
+    'Grabbing bubble tea at Chatime, near campus',
+    'Chilling in King\'s College Circle',
+    'Lunch at Sammy\'s Student Exchange',
+    'People-watching in Convocation Hall',
+    'Hiding from responsibility at Gerstein Library',
   ],
-  placesInNyc: [
-    'stackt market',
-    'kensington market exploration',
-    'trinity bellwoods park picnics',
-    'evenings at tiff bell lightbox',
-    'sunday brunch at mildred\'s temple kitchen',
-    'books and browsing at type books (queen west)',
-    'swims at toronto pan am sports centre',
-    'wandering st. lawrence market',
-    'walking by harbourfront centre',
+  placesInToronto: [
+    'Stackt Market',
+    'Kensington Market exploration',
+    'Trinity Bellwoods Park picnics',
+    'Evenings at TIFF Bell Lightbox',
+    'Sunday brunch at Mildred\'s Temple Kitchen',
+    'Books and browsing at Type Books (Queen West)',
+    'Swims at Toronto Pan Am Sports Centre',
+    'Wandering St. Lawrence Market',
+    'Walking by Harbourfront Centre',
   ],
 };
 
+const sections = [
+  { key: 'films', label: 'FILMS', items: lists.films },
+  { key: 'books', label: 'BOOKS', items: lists.books },
+  { key: 'uoft', label: 'PLACES AT/AROUND UOFT', items: lists.placesAround },
+  { key: 'toronto', label: 'PLACES IN TORONTO', items: lists.placesInToronto },
+];
+
 const Writing = () => {
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+
   return (
-    <div className="min-h-screen bg-background text-white font-mono p-8 pt-32 md:p-16 md:pt-24">
-      <div className="max-w-4xl space-y-12">
-        <Link 
-          to="/contact" 
-          className="text-xs text-white/70 hover:text-white transition-colors inline-block mb-8 lowercase"
-        >
-          [ ← back to say hi! ]
-        </Link>
-        
-        <h1 className="text-xs uppercase tracking-wider mb-12 font-bold">
-          <span style={{ color: '#7FFFD4' }}>
+    <div className="min-h-screen bg-background text-white font-mono p-8 md:p-16">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-xs uppercase tracking-wider mb-12 font-bold text-center">
+          <span style={{ color: 'var(--accent-mint)' }}>
             <ScrambleText text="FAVORITES I'VE COLLECTED THROUGH 19 YEARS OF LIVING" delay={100} />
           </span>
         </h1>
-        
-        {/* Films */}
-        <section>
-          <h2 className="text-xs text-white/50 italic mb-4 lowercase">
-            <ScrambleText text="films" delay={200} />
-          </h2>
-          <ul className="text-xs text-white leading-relaxed space-y-1">
-            {lists.films.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
 
-        {/* Books */}
-        <section>
-          <h2 className="text-xs text-white/50 italic mb-4 lowercase">
-            <ScrambleText text="books" delay={300} />
-          </h2>
-          <ul className="text-xs text-white leading-relaxed space-y-1">
-            {lists.books.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
+        <div className="space-y-10">
+          {sections.map((section, sIdx) => (
+            <section
+              key={section.key}
+              onMouseEnter={() => setHoveredSection(section.key)}
+              onMouseLeave={() => setHoveredSection(null)}
+            >
+              <h2 className="text-xs uppercase tracking-wider mb-4 font-bold">
+                <span style={{ color: 'var(--accent-mint)' }}>
+                  <ScrambleText text={section.label} delay={150 + sIdx * 50} />
+                </span>
+              </h2>
 
-        {/* Places at/around UofT */}
-        <section>
-          <h2 className="text-xs text-white/50 italic mb-4 lowercase">
-            <ScrambleText text="places at/around uoft" delay={500} />
-          </h2>
-          <ul className="text-xs text-white leading-relaxed space-y-1">
-            {lists.placesAround.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Places in Toronto */}
-        <section>
-          <h2 className="text-xs text-white/50 italic mb-4 lowercase">
-            <ScrambleText text="places in toronto" delay={600} />
-          </h2>
-          <ul className="text-xs text-white leading-relaxed space-y-1">
-            {lists.placesInNyc.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </section>
+              <div className="space-y-2 text-xs text-white leading-relaxed">
+                {section.items.map((item, idx) => (
+                  <div key={idx} className="flex items-baseline gap-3">
+                    <span className="text-white/50">
+                      <ScrambleText text={String(idx + 1).padStart(2, '0')} delay={200 + sIdx * 50 + idx * 30} />
+                    </span>
+                    <span>
+                      <HoverScrambleText text={item} shouldScramble={hoveredSection === section.key} />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );
