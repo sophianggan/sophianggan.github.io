@@ -22,7 +22,7 @@ export const Navigation = () => {
         </NavLink>
       ))}
       <a
-        href="https://drive.google.com/file/d/1hhMDFiIl7XPKN2MnyHKsxnc__6q2Kl3n/view?usp=sharing"
+        href="https://drive.google.com/file/d/1_PiuMSp1wRd3ueLqb02G_H1uSKmePHuY/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="font-mono text-xs text-white/40 hover:text-white transition-colors"

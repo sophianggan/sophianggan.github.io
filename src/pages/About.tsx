@@ -8,7 +8,7 @@ const FULL_TEXT = MINT_PART + FADED_PART;
 const tabs = [
   { to: '/timeline', label: 'about me' },
   { to: '/projects', label: 'projects' },
-  { href: 'https://drive.google.com/file/d/1hhMDFiIl7XPKN2MnyHKsxnc__6q2Kl3n/view?usp=sharing', label: 'resume' },
+  { href: 'https://drive.google.com/file/d/1_PiuMSp1wRd3ueLqb02G_H1uSKmePHuY/view?usp=sharing', label: 'resume' },
 ];
 
 const About = () => {
