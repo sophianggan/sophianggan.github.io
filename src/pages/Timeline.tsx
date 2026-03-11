@@ -68,13 +68,13 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">jun 2021 - jul 2024</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="peruvian team captain & assistant coach" shouldScramble={hoveredSection === 'past'} />
+                  <HoverScrambleText text="Peruvian team captain & assistant coach" shouldScramble={hoveredSection === 'past'} />
                 </div>
                 <div className="text-white/70 italic mb-2">
-                  peruvian national swimming team
+                  Peruvian national swimming team
                 </div>
                 <div>
-                  captained and mentored 80+ athletes to a south american athletic conference title and 100+ record-breaking finishes. competed at the junior world championships, contributing to a 7th place relay and multiple top 5 finishes. contributed to peru's 3rd place at copa pacifico and set lasting national records.
+                  captained and mentored 80+ athletes to a South American athletic conference title and 100+ record-breaking finishes. competed at the Junior World Championships, contributing to a 7th place relay and multiple top 5 finishes. contributed to Peru's 3rd place at Copa Pacifico and set lasting national records.
                 </div>
               </div>
             </div>
