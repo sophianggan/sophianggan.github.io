@@ -8,14 +8,14 @@ const columns = [
     projects: [
       {
         title: 'olympic medal predictor',
-        tech: 'neo4j, pytorch geometric, hetero-gnn (graphsage + gatv2), sbert, langgraph',
-        description: 'built a leakage-safe olympic medal ranking system using time-sliced neo4j snapshots; trained a hetero-gnn model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end ci/cd pipeline.',
+        tech: 'Neo4j, PyTorch Geometric, hetero-GNN (GraphSAGE + GATv2), SBERT, LangGraph',
+        description: 'built a leakage-safe olympic medal ranking system using time-sliced Neo4j snapshots; trained a hetero-GNN model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end CI/CD pipeline.',
         link: 'https://github.com/sophianggan/olympus-graph',
       },
       {
         title: 'wordle & connections solver',
-        tech: 'c++, simd (highway), cmake, webassembly (emscripten), pca, ci',
-        description: 'built a high-performance wordle + connections solver using shannon-entropy search and pca clustering; accelerated scoring with simd (highway) and fixed-block memory pooling, shipped a webassembly demo, and added ci with sanitizer-backed tests, proofs, and detailed benchmarks.',
+        tech: 'C++, SIMD (Highway), CMake, WebAssembly (Emscripten), PCA, CI',
+        description: 'built a high-performance wordle + connections solver using shannon-entropy search and PCA clustering; accelerated scoring with SIMD (Highway) and fixed-block memory pooling, shipped a WebAssembly demo, and added CI with sanitizer-backed tests, proofs, and detailed benchmarks.',
         link: 'https://sophianggan.github.io/nyt-solver/',
       },
     ],
@@ -25,14 +25,14 @@ const columns = [
     projects: [
       {
         title: 'news-driven stock analysis',
-        tech: 'fastapi, streamlit, postgres, spacy, pyvis, scikit-learn, pyspark, docker, ci',
-        description: 'built a news-to-graph analytics pipeline: extracted company entities from google news, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (streamlit/pyvis) + json apis (fastapi); computed influence (pagerank) and weekly sector metrics from postgres-backed headlines.',
+        tech: 'FastAPI, Streamlit, Postgres, spaCy, PyVis, scikit-learn, PySpark, Docker, CI',
+        description: 'built a news-to-graph analytics pipeline: extracted company entities from Google News, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (Streamlit/PyVis) + JSON APIs (FastAPI); computed influence (PageRank) and weekly sector metrics from Postgres-backed headlines.',
         link: 'https://github.com/sophianggan/pulseforge',
       },
       {
-        title: 'multimodal rag study assistant (virtual ta)',
-        tech: 'python, langchain, pinecone, groq batching, ocr, etl',
-        description: 'built a multimodal study assistant: indexed pdf chunks in pinecone for semantic retrieval, automated batched groq-based ocr with cleaning, chunking, and embedding with a 72-hour refresh etl, and served grounded q&a via langchain and groq with microsoft claimification guardrails.',
+        title: 'multimodal RAG study assistant (virtual TA)',
+        tech: 'Python, LangChain, Pinecone, Groq batching, OCR, ETL',
+        description: 'built a multimodal study assistant: indexed PDF chunks in Pinecone for semantic retrieval, automated batched Groq-based OCR with cleaning, chunking, and embedding with a 72-hour refresh ETL, and served grounded Q&A via LangChain and Groq with Microsoft claimification guardrails.',
         link: '#',
       },
     ],
@@ -41,15 +41,15 @@ const columns = [
     label: 'FINANCE & ANALYTICS',
     projects: [
       {
-        title: 'fp&a reporting automation',
-        tech: 'excel (power query, pivottables, solver), postgresql, tableau, python',
-        description: 'expedited close reporting speed, as measured by automated refreshes and actual vs plan vs prior variance outputs, by building a monthly sql data model and executive-summary pipeline.',
+        title: 'FP&A reporting automation',
+        tech: 'Excel (Power Query, PivotTables, Solver), PostgreSQL, Tableau, Python',
+        description: 'expedited close reporting speed, as measured by automated refreshes and actual vs plan vs prior variance outputs, by building a monthly SQL data model and executive-summary pipeline.',
         link: 'https://github.com/sophianggan/fpa-reporting-automation',
       },
       {
         title: 'subscription revenue forecasting dashboard',
-        tech: 'excel, sql, tableau, power bi',
-        description: 'clarified planning visibility, as measured by segment-level retention and revenue forecasts, by modeling churn, arpu, and mrr using sql aggregations and excel sensitivity analysis.',
+        tech: 'Excel, SQL, Tableau, Power BI',
+        description: 'clarified planning visibility, as measured by segment-level retention and revenue forecasts, by modeling churn, ARPU, and MRR using SQL aggregations and Excel sensitivity analysis.',
         link: 'https://github.com/sophianggan/Subscription-Revenue-Forecasting-Dashboard',
       },
     ],

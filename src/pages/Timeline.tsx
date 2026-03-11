@@ -58,7 +58,7 @@ const Timeline = () => {
                   restaurant buffet mandarin & hotel el doral
                 </div>
                 <div>
-                  forecasted daily demand to keep occupancy &gt;80% and reconciled $4m annual transactions with zero variances. redesigned check-in and seating workflows to cut wait times 25% while sustaining 94% guest satisfaction. managed 30+ daily requests, increased upsell rate by 15%, and eliminated no-show write-offs for 6 months. built weekly kpi dashboards (occupancy, revpash) and trained new staff, reducing overtime costs 12%.
+                  forecasted daily demand to keep occupancy &gt;80% and reconciled $4m annual transactions with zero variances. redesigned check-in and seating workflows to cut wait times 25% while sustaining 94% guest satisfaction. managed 30+ daily requests, increased upsell rate by 15%, and eliminated no-show write-offs for 6 months. built weekly KPI dashboards (occupancy, RevPASH) and trained new staff, reducing overtime costs 12%.
                 </div>
               </div>
               
@@ -101,10 +101,10 @@ const Timeline = () => {
                   <HoverScrambleText text="olympic medal predictor" shouldScramble={hoveredSection === 'projects'} />
                 </div>
                 <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
-                  neo4j, pytorch geometric, hetero-gnn (graphsage + gatv2), sbert, langgraph
+                  Neo4j, PyTorch Geometric, hetero-GNN (GraphSAGE + GATv2), SBERT, LangGraph
                 </div>
                 <div>
-                  built a leakage-safe olympic medal ranking system using time-sliced neo4j snapshots; trained a hetero-gnn model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end ci/cd pipeline.
+                  built a leakage-safe olympic medal ranking system using time-sliced Neo4j snapshots; trained a hetero-GNN model, engineered graph features to predict next-games medalists, handled imbalance with hard negatives, and shipped an end-to-end CI/CD pipeline.
                 </div>
               </div>
               
@@ -117,10 +117,10 @@ const Timeline = () => {
                   <HoverScrambleText text="wordle & connections solver" shouldScramble={hoveredSection === 'projects'} />
                 </div>
                 <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
-                  c++, simd (highway), cmake, webassembly (emscripten), pca, ci
+                  C++, SIMD (Highway), CMake, WebAssembly (Emscripten), PCA, CI
                 </div>
                 <div>
-                  built a high-performance wordle + connections solver using shannon-entropy search and pca clustering; accelerated scoring with simd (highway) and fixed-block memory pooling, shipped a webassembly demo, and added ci with sanitizer-backed tests, proofs, and detailed benchmarks.
+                  built a high-performance wordle + connections solver using shannon-entropy search and PCA clustering; accelerated scoring with SIMD (Highway) and fixed-block memory pooling, shipped a WebAssembly demo, and added CI with sanitizer-backed tests, proofs, and detailed benchmarks.
                 </div>
               </div>
               
@@ -133,10 +133,10 @@ const Timeline = () => {
                   <HoverScrambleText text="news-driven stock analysis" shouldScramble={hoveredSection === 'projects'} />
                 </div>
                 <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
-                  fastapi, streamlit, postgres, spacy, pyvis, scikit-learn, pyspark, docker, ci
+                  FastAPI, Streamlit, Postgres, spaCy, PyVis, scikit-learn, PySpark, Docker, CI
                 </div>
                 <div>
-                  built a news-to-graph analytics pipeline: extracted company entities from google news, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (streamlit/pyvis) + json apis (fastapi); computed influence (pagerank) and weekly sector metrics from postgres-backed headlines.
+                  built a news-to-graph analytics pipeline: extracted company entities from Google News, canonicalized to tickers/sectors, generated multi-hop co-mention graphs, and served interactive network views (Streamlit/PyVis) + JSON APIs (FastAPI); computed influence (PageRank) and weekly sector metrics from Postgres-backed headlines.
                 </div>
               </div>
 
@@ -146,13 +146,13 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">oct 2025</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="multimodal rag study assistant (virtual ta)" shouldScramble={hoveredSection === 'projects'} />
+                  <HoverScrambleText text="multimodal RAG study assistant (virtual TA)" shouldScramble={hoveredSection === 'projects'} />
                 </div>
                 <div className="italic mb-2" style={{ color: 'var(--accent-teal)' }}>
-                  python, langchain, pinecone, groq batching, ocr, etl
+                  Python, LangChain, Pinecone, Groq batching, OCR, ETL
                 </div>
                 <div>
-                  built a multimodal study assistant: indexed pdf chunks in pinecone for semantic retrieval, automated batched groq-based ocr with cleaning, chunking, and embedding with a 72-hour refresh etl, and served grounded q&a via langchain and groq with microsoft claimification guardrails.
+                  built a multimodal study assistant: indexed PDF chunks in Pinecone for semantic retrieval, automated batched Groq-based OCR with cleaning, chunking, and embedding with a 72-hour refresh ETL, and served grounded Q&A via LangChain and Groq with Microsoft claimification guardrails.
                 </div>
               </div>
             </div>
@@ -176,13 +176,13 @@ const Timeline = () => {
                   <span className="ml-auto text-white/70">sept 2024 - present</span>
                 </div>
                 <div className="font-semibold mb-1">
-                  <HoverScrambleText text="associate it operations advisor & data analyst" shouldScramble={hoveredSection === 'currently'} />
+                  <HoverScrambleText text="associate IT operations advisor & data analyst" shouldScramble={hoveredSection === 'currently'} />
                 </div>
                 <div className="text-white/70 italic mb-2">
-                  scotiabank it help desk, university of toronto information commons
+                  Scotiabank IT help desk, University of Toronto Information Commons
                 </div>
                 <div>
-                  automated identity lifecycle workflows for 5k+ azure accounts using python apis, cut processing time by 80%. queried ticket data with sql and built power bi dashboards to track sla risk and trends across 50+ daily cases. designed rule-based triage automation in servicenow, reducing mean-tor by 45% through ai routing. built log-ingestion pipeline centralizing m365/azure audit data for analytics, anomaly tracing, & compliance.
+                  automated identity lifecycle workflows for 5k+ Azure accounts using Python APIs, cut processing time by 80%. queried ticket data with SQL and built Power BI dashboards to track SLA risk and trends across 50+ daily cases. designed rule-based triage automation in ServiceNow, reducing mean-TOR by 45% through AI routing. built log-ingestion pipeline centralizing M365/Azure audit data for analytics, anomaly tracing, & compliance.
                 </div>
               </div>
             </div>
@@ -205,7 +205,7 @@ const Timeline = () => {
                   <HoverScrambleText text="programming" shouldScramble={hoveredSection === 'skills'} />
                 </div>
                 <div className="text-white/70">
-                  python, sql, c++
+                  Python, SQL, C++
                 </div>
               </div>
 
@@ -214,7 +214,7 @@ const Timeline = () => {
                   <HoverScrambleText text="frameworks & libraries" shouldScramble={hoveredSection === 'skills'} />
                 </div>
                 <div className="text-white/70">
-                  pandas, pytorch, numpy, scikit-learn, statsmodels, xgboost, lightgbm, catboost, spacy, langchain, langgraph, rag, recursive language models (rlms)
+                  pandas, PyTorch, NumPy, scikit-learn, statsmodels, XGBoost, LightGBM, CatBoost, spaCy, LangChain, LangGraph, RAG, recursive language models (RLMs)
                 </div>
               </div>
 
@@ -223,7 +223,7 @@ const Timeline = () => {
                   <HoverScrambleText text="data & infra" shouldScramble={hoveredSection === 'skills'} />
                 </div>
                 <div className="text-white/70">
-                  pyspark, airflow, sqlalchemy, etl, batch processing, data warehousing, fastapi, fastmcp, rest, docker, ci/cd, git
+                  PySpark, Airflow, SQLAlchemy, ETL, batch processing, data warehousing, FastAPI, FastMCP, REST, Docker, CI/CD, Git
                 </div>
               </div>
 
@@ -232,7 +232,7 @@ const Timeline = () => {
                   <HoverScrambleText text="databases" shouldScramble={hoveredSection === 'skills'} />
                 </div>
                 <div className="text-white/70">
-                  postgresql, neo4j, pinecone
+                  PostgreSQL, Neo4j, Pinecone
                 </div>
               </div>
 
@@ -241,7 +241,7 @@ const Timeline = () => {
                   <HoverScrambleText text="financial & analytics" shouldScramble={hoveredSection === 'skills'} />
                 </div>
                 <div className="text-white/70">
-                  advanced excel (pivottables, xlookup, power query), tableau, power bi, variance analysis, forecasting
+                  advanced Excel (PivotTables, XLOOKUP, Power Query), Tableau, Power BI, variance analysis, forecasting
                 </div>
               </div>
             </div>
