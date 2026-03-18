@@ -41,8 +41,8 @@ const AppContent = () => {
         >
           <Github size={16} />
         </a>
-        <a
-          href="https://linkedin.com/in/sophianggan"
+          <a
+            href="https://www.linkedin.com/in/sophia-ng-gan/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white/70 hover:text-white transition-colors"
